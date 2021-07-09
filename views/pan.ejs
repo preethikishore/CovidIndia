@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#2a8637">
+    <meta name="description" content="">
+    <meta name="keywords" content="" />
+    <meta name="author" content="SRV InfoTech">
+    <meta name='copyright' content='SRV InfoTech' />
+    <meta name="cache-control" content="no-cache" />
+    <meta name="distribution" content="Global" />
+    <meta name="document-distribution" content="Global" />
+    <meta name="document-rating" content="General" />
+    <meta name="document-rights" content="Public" />
+    <meta name="document-state" content="static" />
+    <meta name="publisher" content="SRV InfoTech" />
+    <meta name="rating" content="General" />
+    <meta name="expires" content="never"/>
+    <meta name="resource-type" content="General" />
+    <meta name="Address" content="" />
+    <meta name="robots" content="INDEX,FOLLOW" />
+
+    <!-- OG Tags Start -->  
+    <meta property="og:title" content="PAN Card Verification">
+    <meta property="og:url" content="">
+    <meta property="og:description" content="">
+    <meta property="og:type" content="">
+    <meta property="og:image" content="">
+    <meta property="og:site_name" content="">
+    <meta property="og:street-address" content="">
+    <meta property="og:locality" content="">
+    <meta property="og:region" content="">
+    <meta property="og:country-name" content="India">
+    <meta property="og:email" content="">
+    <meta property="og:phone_number" content="">
+
+    <title>PAN Card Verification</title>
+    
+    <link rel="icon" href="./img/favicon.svg" sizes="32x32" type="image/png"> 
+
+
+    <!-- CSS Stylesheets -->
+    <link href="./css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="./css/mystyle.css" rel="stylesheet" type="text/css">
+
+    <!-- FONT -->
+    <link href="./fonts/asap/stylesheet.css" rel="stylesheet" type="text/css">	
+
+</head>
+<body>
+
+
+	<div class="wrapper">
+
+		<div class="main">
+			<div class="mainmenu" id="mainmenu">
+				<div class="menu">
+	<ul>
+		<li class="d-block d-lg-none"><button class="close" id="closeBtn"></button></li>
+		<li class="active"><a href="/pan">PAN Card Verification</a></li>
+		<li class=""><a href="/bank">Bank Account Verification</a></li>
+		<li class=""><a href="/aadhar">Aadhar Verification</a></li>
+	</ul>
+	</div><!-- menu -->			</div>
+				<div class="d-lg-none">
+				<button class="menuBtn"><img src="./img/menu.svg" alt></button>
+		</div>
+<!--end of Navigation bar-->
+
+			<div class="content">
+				<div class="contbox">
+					<div class="row">
+					
+					<div class="col">
+					<div class="formicon">
+						<img src="./img/bank.svg" alt>
+					</div><!-- formicon -->
+					<h1>Pan Card Verification</h1>
+					</div><!-- col -->
+
+					<form class="needs-validation"  method="POST" action="/pan" novalidate>
+
+					    <div class="col mb-3">
+					      <label for="validationCustom01">PAN Number</label>
+					      <input type="text" class="form-control" name="pan" id="validationCustom01" required>
+					      <div class="valid-feedback">
+					        Looks good!
+					      </div>
+					      <div class="invalid-feedback">
+					        Please enter PAN Card Number.
+					      </div>
+					    </div>
+
+
+					    <div class="col">
+					  		<button id="verify" class="btn btn-submit" type="submit">Verify</button>
+					  	</div>
+
+					</form>
+
+					</div><!-- row -->
+
+					<div class="row" id="dataList">
+						<div class="maindata">
+							<table class="table table-hover">
+							<tr>
+								<td>PAN Number</td>
+								<td>:</td>
+								<td><%= panNum %></td>
+							</tr>
+							<tr>
+								<th>Name</th>
+								<th>:</th>
+								<th><%= personName %></th>
+							</tr>
+							<tr>
+								<td>Status</td>
+								<td>:</td>
+								<td><%= message %></td>
+							</tr>
+							</table>
+						</div><!-- maindata -->
+					</div><!-- row -->
+
+				</div><!-- contbox -->
+			</div><!-- cointent -->
+		</div><!-- main -->
+
+	</div><!-- wrapper -->
+
+
+    <script src="./js/jquery-3.5.1.min.js"></script> 
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/main.js"></script>
+<script>
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+(function() {
+  'use strict';
+  window.addEventListener('load', function() {
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.getElementsByClassName('needs-validation');
+    // Loop over them and prevent submission
+    var validation = Array.prototype.filter.call(forms, function(form) {
+      form.addEventListener('submit', function(event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  }, false);
+})();
+</script>
+
+
+<script>
+$(document).ready(function(){
+	$('#verify').on('click', function(){
+		$('#dataList').show();
+	});
+//	$('#dataList').hide(10000);
+})
+</script>
+
+</body>
+</html>

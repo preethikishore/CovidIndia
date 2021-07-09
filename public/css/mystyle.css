@@ -1,0 +1,230 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	font-family: 'asapregular';
+}
+img{
+	max-width: 100%;
+}
+
+.wrapper{
+	background-color: #f7f7f7;
+	background-image: url(../img/wrapper.svg);
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+    background-attachment: fixed;
+    width: 100%;
+    min-height: 100vh;
+    padding: 0 1rem;
+}
+
+.main{
+	display: flex;
+	flex-flow: wrap;
+    align-items: flex-start;
+	width: 800px;
+	max-width: 100%;
+	margin: auto;
+	padding-top: 3rem;
+}
+.main .menu{
+	background-color: #fff;
+	padding: 15px;
+	border-radius: .3rem;
+	width: 300px;
+    box-shadow: 20px 20px 20px rgba(0,0,0,0.05);
+}
+.main .menu ul{
+	padding: 0;
+	list-style-type: none;
+	margin: 0;
+}
+.main .menu ul li{
+	margin: 10px 0;
+}
+.main .menu ul li a{
+	color: #666;
+	padding: 12px 10px;
+	display: block;
+    border-radius: .3rem;
+    position: relative;
+    transition: all .3s ease;
+    -webkit-transition: all .3s ease;
+}
+.main .menu ul li.active a{
+	border-left: 5px solid #0089cf;
+	color: #0089cf;
+    margin-left: -2rem;
+    background-color: #fff;
+    box-shadow: 3px 5px 20px rgba(0,0,0,0.05);
+}
+.main .menu ul li a:hover{
+	background-color: #f7f7f7;
+	text-decoration: none;
+}
+.main .menu ul li.active a:hover{
+	background-color: #fff;
+}
+.main .menu ul li.active a:after{
+	content: '';
+	background-image: url(../img/rightarrow.svg);
+    width: 15px;
+    height: 14px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    right: 10px;
+    top: 17px;
+}
+.main .menuBtn{
+	width: 26px;
+    border: none;
+    position: absolute;
+    top: 2rem;
+    right: 1rem;
+    background-color: transparent;
+}
+.main .content{
+    width: calc(100% - 300px);
+    padding-left: 2rem;
+    margin-bottom: 1rem;
+}
+.main .content .contbox{
+	background-color: #fff;
+    padding: 15px;
+    border-radius: .3rem;
+    box-shadow: 20px 20px 20px rgba(0,0,0,0.05);
+}
+.main .content .contbox .formicon{
+	background-color: #07496b;
+    width: 4rem;
+    height: 4rem;
+    padding: 6px;
+    border-radius: .3rem;
+    display: block;
+    margin: auto;
+    margin-top: -2rem;
+    margin-bottom: 1rem;
+    box-shadow: 10px 10px 20px rgba(0,0,0,0.1);
+}
+.main .content .contbox h1{
+	text-align: center;
+	font-size: 1.5rem;
+	margin-bottom: 1rem;
+    font-family: 'asapmedium';
+}
+.main .content .contbox form{
+	width: 100%;
+}
+.main .content .contbox form label{
+	font-size: .85rem;
+	color: #666;
+}
+.main .content .contbox form input,
+.main .content .contbox form input:focus{
+	padding: 10px 15px;
+	height: auto;
+    outline: 0;
+    box-shadow: none;
+}
+.main .content .contbox form .btn-submit,
+.main .content .contbox form .btn-submit:focus{
+	background-color: #0089cf;
+	color: #fff;
+    height: 50px;
+    min-width: 150px;
+    outline: 0;
+    box-shadow: none;
+    transition: all .3s ease;
+    -webkit-transition: all .3s ease;
+}
+.main .content .contbox form .btn-submit:hover{
+	background-color: #045781;
+}
+
+
+.main .maindata{
+    margin: 0 15px;
+    width: 100%;
+    margin-top: 1rem;
+    background-color: #f9f9f9;
+    border-radius: .3rem;
+    overflow: hidden;
+}
+.main .maindata .table td,
+.main .maindata .table th{
+	border: none;
+}
+
+.main .maindata .table{
+	color: #666;
+	margin: 0;
+}
+.main .maindata .table-hover tbody tr:hover{
+	background-color: #f1f1f1;
+}
+
+/* Hide HTML5 Up and Down arrows. */
+input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button {
+-webkit-appearance: none;
+margin: 0;
+}
+input[type="number"] {
+-moz-appearance: textfield;
+}
+
+
+@media(max-width: 991px){
+.main{
+	padding-top: 6rem;
+}
+.main .menu, .main .content{
+	width: 100%;
+}
+.main .content{
+	padding: 0;
+}
+.main .menu ul li.active a{
+	margin-left: 1rem;
+}
+.mainmenu{
+	display: none;
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 1;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+}
+.mainmenu .menu{
+	box-shadow: none;
+	border-radius: 0;
+	padding-top: 4rem;
+}
+.mainmenu .menu button.close{
+	position: absolute;
+    width: 30px;
+    top: 2rem;
+    right: 1rem;
+}
+.mainmenu .menu button.close:after,
+.mainmenu .menu button.close:before{
+	content: '';
+	width: 2px;
+	height: 24px;
+	background-color: #333;
+	position: absolute;
+	top: 0;
+}
+.mainmenu .menu button.close:after{
+	transform: rotate(45deg);
+}
+.mainmenu .menu button.close:before{
+	transform: rotate(-45deg);
+}
+}
